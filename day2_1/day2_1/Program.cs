@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -95,7 +96,51 @@ namespace day2_1
             Console.WriteLine(sampleText);
             Console.WriteLine(sampleText.Substring(2));
             Console.WriteLine(sampleText.Substring(8));
+
+            string[] arr = sampleText.Split();
+
+            Console.WriteLine($"\t arr = {arr}");
+            Console.WriteLine($"\t arr = {arr[0]},{arr[1]},{arr[2]}");
+
+            foreach (var item in arr)
+            {
+                Console.WriteLine($"\t {item}");
+            }
         }
+
+        public static void lesson3()
+        {
+            int x = 10, y = 20, z = 30;
+            Console.WriteLine($"{x}+{y}+{z}={x+y+z}");
+        }
+
+        public static void lesson3_string_formating()
+        {
+            string sample1 = "가나다라마바사";
+            Console.WriteLine("\t*{0,20}*", sample1);
+            Console.WriteLine("\t*{0,-20}*", sample1);
+
+        }
+
+        public static void lesson3_number_formatting()
+        {
+            Console.WriteLine("\t 10진수 => {0:D10}", 12345);
+            Console.WriteLine("\t 16진수 => {0}", 0X32A);
+            Console.WriteLine("\t 16진수 => {0:X}", 0X32A);
+            Console.WriteLine("\t 16진수 => {0:X10}", 0X32A);
+            Console.WriteLine("\t N => {0}", 10000000000);
+            Console.WriteLine("\t N => {0:N}", 10000000000);
+            Console.WriteLine("\t N => {0:N0}", 10000000000);
+            Console.WriteLine("\t F => {0:F}", 1234.5678); // 1234.57
+            Console.WriteLine("\t F => {0:F3}", 1234); // 1234.000
+            Console.WriteLine("\t F => {0:F0}", 1234.5678); // 1235
+            Console.WriteLine("\t F => {0:F7}", 1234.5678);// 1234.5678000
+            // {인덱스:E소숫점아래표시숫자} 
+            Console.WriteLine("\t E => {0:E}", 1234.5678);// 1.234568E+003
+            Console.WriteLine("\t E => {0:E2}", 1234.5678);// 1.23E+003
+            Console.WriteLine("\t E => {0:E5}", 1234.5678);// 1.23457E+003
+        }
+
 
         static void Main(string[] args)
         {
@@ -109,8 +154,12 @@ namespace day2_1
 
             //lesson2_string_method();
 
-            lesson2_split_method();
+            //lesson2_split_method();
 
+            //lesson3();
+            //lesson3_string_formating();
+
+            lesson3_number_formatting();
         }
     }
 }
