@@ -1,0 +1,8 @@
+D:\WorkSpace230320\C-Study\Watch\Watch\bin\Debug\Watch.exe.config
+D:\WorkSpace230320\C-Study\Watch\Watch\bin\Debug\Watch.exe
+D:\WorkSpace230320\C-Study\Watch\Watch\bin\Debug\Watch.pdb
+D:\WorkSpace230320\C-Study\Watch\Watch\obj\Debug\Watch.csproj.AssemblyReference.cache
+D:\WorkSpace230320\C-Study\Watch\Watch\obj\Debug\Watch.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace230320\C-Study\Watch\Watch\obj\Debug\Watch.csproj.CoreCompileInputs.cache
+D:\WorkSpace230320\C-Study\Watch\Watch\obj\Debug\Watch.exe
+D:\WorkSpace230320\C-Study\Watch\Watch\obj\Debug\Watch.pdb
