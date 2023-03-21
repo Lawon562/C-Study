@@ -67,6 +67,36 @@ namespace day2_1
             Console.WriteLine(sampleTxt.Length-1);
         }
 
+        public static void lesson2_string_method()
+        {
+            string sampleTxt1 = "hello C#";
+            string sampleTxt2 = "abcdefghijklmnopqrstuvwxyz";
+
+            Console.WriteLine($"\t sampltTxt1 = {sampleTxt1}");
+            Console.WriteLine($"\t sampltTxt2 = {sampleTxt2}");
+            Console.WriteLine($"\t ToLower = {sampleTxt2.ToLower()}");
+            Console.WriteLine($"\t ToUpper = {sampleTxt2.ToUpper()}");
+            Console.WriteLine($"\t sampltTxt2 = {sampleTxt2.Insert(0, "*")}");
+            Console.WriteLine($"\t sampltTxt2 = {sampleTxt2.Remove(3, 5)}");
+
+            Console.WriteLine("####");
+            Console.Write("Trin={0}", "               홍 길 동           \n".Trim());
+            Console.WriteLine("####");
+
+            Console.WriteLine("####");
+            Console.Write("Trin={0}", "               홍 길 동           \n".Replace(" ", ""));
+            Console.WriteLine("####");
+
+        }
+
+        public static void lesson2_split_method()
+        {
+            string sampleText = "C# Java Python";
+            Console.WriteLine(sampleText);
+            Console.WriteLine(sampleText.Substring(2));
+            Console.WriteLine(sampleText.Substring(8));
+        }
+
         static void Main(string[] args)
         {
             //lesson1();
@@ -75,7 +105,12 @@ namespace day2_1
 
             //lesson1_search_method();
 
-            lesson1_string_method();
+            //lesson1_string_method();
+
+            //lesson2_string_method();
+
+            lesson2_split_method();
+
         }
     }
 }
