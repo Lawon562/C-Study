@@ -43,7 +43,7 @@ namespace day2_1
             Console.WriteLine($"\t p6의 값은 {p6} 데이타형은 {p6.GetType()}");
         }
 
-        public static void lesson3_search_method()
+        public static void lesson1_search_method()
         {
             string sampleTxt1 = "Good Morning";
             string sampleTxt2 = "가나다라마바사아자차카타파하";
@@ -59,13 +59,23 @@ namespace day2_1
 
         }
 
+        public static void lesson1_string_method()
+        {
+            string sampleTxt = "Good Morning, Everyone";
+            Console.WriteLine(sampleTxt[0]);
+            Console.WriteLine(sampleTxt[1]);
+            Console.WriteLine(sampleTxt.Length-1);
+        }
+
         static void Main(string[] args)
         {
             //lesson1();
 
             //lesson1_default();
 
-            lesson3_search_method();
+            //lesson1_search_method();
+
+            lesson1_string_method();
         }
     }
 }
