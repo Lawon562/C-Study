@@ -35,10 +35,69 @@ namespace day3_1
             //ConditionEx1();
             //ConditionQuiz1();
             //ConditionQuiz2();
-            ConditionQuiz3();
+            //ConditionQuiz3();
+            //ConditionQuiz4();
+            //ConditionQuiz5();
+
+            int year = Convert.ToInt32(ReturnStr("출생년도 입력 >>> "));
+            string[] zodiacSign = { "원숭이", "닭", "개", "돼지", "쥐", "소", "호랑이", "토끼", "용", "뱀", "말", "양" };
+            string result = default(string);
+
+            switch (year % 12)
+            {
+                case 0: result = zodiacSign[0];  break;
+                case 1: result = zodiacSign[1]; break;
+                case 2: result = zodiacSign[2]; break;
+                case 3: result = zodiacSign[3]; break;
+                case 4: result = zodiacSign[4]; break;
+                case 5: result = zodiacSign[5]; break;
+                case 6: result = zodiacSign[6]; break;
+                case 7: result = zodiacSign[7]; break;
+                case 8: result = zodiacSign[8]; break;
+                case 9: result = zodiacSign[9]; break;
+                case 10: result = zodiacSign[10]; break;
+                case 11: result = zodiacSign[11]; break;
+                default: break;
+            }
+            Console.WriteLine($"{year}년생은 {zodiacSign[year % 12]}띠입니다.");
 
 
 
+
+        }
+
+        public static void ConditionQuiz5()
+        {
+            int s = Convert.ToInt32(ReturnStr("점수를 입력하세요: "));
+            char grade = "FFFFFFDCBAA"[s / 10];
+            Console.WriteLine($"학점은 {grade}");
+
+            string grade2 = "";
+            switch (s / 10)
+            {
+                case 10:
+                case 9: grade2 = "A"; break;
+                case 8: grade2 = "B"; break;
+                case 7: grade2 = "C"; break;
+                case 6: grade2 = "D"; break;
+                default: grade2 = "F"; break;
+            }
+            Console.WriteLine("학점은 {0}", grade2);
+        }
+
+        public static void ConditionQuiz4()
+        {
+            int result = Convert.ToInt32(ReturnStr("가장 좋아하는 프로그래밍 언어를 입력하시오.\n1.C  2.C++  3.C#  4.JAVA\n\n입력=>"));
+            string str;
+            switch (result)
+            {
+                case 1: str = "C"; break;
+                case 2: str = "C++"; break;
+                case 3: str = "C#"; break;
+                case 4: str = "JAVA"; break;
+                default: str = "잘못된 선택"; break;
+            }
+            Console.WriteLine(str);
         }
 
         public static void ConditionQuiz3()
