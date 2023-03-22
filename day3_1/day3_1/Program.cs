@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,13 +40,183 @@ namespace day3_1
             //ConditionQuiz4();
             //ConditionQuiz5();
 
+            //LoopQuiz1();
+            //LoopQuiz2();
+            //LoopQuiz3();
+            //LoopQuiz4();
+            //LoopQuiz5();
+            //LoopQuiz6();
+            //LoopQuiz7();
+            //LoopQuiz8();
+            //LoopQuiz9();
+            //LoopQuiz10();
+            //LoopQuiz11();
+        }
+
+        public static void LoopQuiz11()
+        {
+            string word = "apple apart ant apply aribaba";
+            foreach (char c in word)
+            {
+                Console.Write(c == 'a' || c == 'l' ? '*' : c);
+            }
+            //word = word.Replace("a", "*").Replace("l", "*");
+            //Console.WriteLine(word);
+        }
+
+        public static void LoopQuiz10()
+        {
+            Dictionary<string, string> user = ReturnInputValue(new Dictionary<string, string>()
+            {
+                {"Name", "이름..." },
+                {"Id", "아이디..." }
+            });
+
+            Console.Write(user["Name"][0]);
+            for (int i = 1; i < user["Name"].Length; i++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+
+            Console.Write(user["Id"][0]);
+            for (int i = 1; i < user["Id"].Length - 1; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write(user["Id"][user["Id"].Length - 1]);
+            Console.WriteLine();
+        }
+
+        public static void LoopQuiz9()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                for (int k = 4 - i; k > 0; k--)
+                {
+                    Console.Write("  ");
+                }
+                for (int k = 0; k <= i * 2; k++)
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void LoopQuiz8()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                for (int k = 5 - i; k > 0; k--)
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void LoopQuiz7()
+        {
+            for (int i = 1; i <= 6; i++)
+            {
+                Console.Write("{0,-8}", i);
+                for (int k = 0; k < 6; k++) Console.Write("{0, -2}", "*");
+                Console.WriteLine();
+            }
+        }
+
+        public static void LoopQuiz6()
+        {
+            int count = 0;
+            for (int i = 1; i < 100; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    Console.Write("{0,5} ", i);
+                    if (++count % 5 == 0) Console.WriteLine();
+                }
+            }
+            Console.WriteLine();
+        }
+
+        public static void LoopQuiz5()
+        {
+            int num = Convert.ToInt32(ReturnStr("입력 숫자=>"));
+            for (int i = 1; i < 10; i++)
+            {
+                Console.WriteLine(String.Format("{0} x {1} = {2}", num, i, num * i));
+            }
+
+        }
+
+        public static void LoopQuiz4()
+        {
+            int num = 1;
+            int total = 0;
+            do
+            {
+                num++;
+                if (num % 7 == 0 || num % 11 == 0)
+                {
+                    Console.Write("{0, 5}", num);
+                    if (total++ > 0 && total % 5 == 0) Console.WriteLine();
+                }
+            } while (num < 100);
+            Console.WriteLine("\n총 갯수는? {0}", total);
+        }
+
+        public static void LoopQuiz3()
+        {
+            string s = "";
+            StringBuilder stringBuilder = new StringBuilder();
+            while (!(s.Equals("q")))
+            {
+                stringBuilder.Append(s).Append(" ");
+                Console.WriteLine("Q나 q를 입력하면 입력이 종료됩니다.");
+                s = ReturnStr("종목 >> ");
+                Console.WriteLine();
+            }
+            Console.WriteLine("입력이 종료되었습니다.");
+            Console.WriteLine("보유 주식 종목 : {0}", stringBuilder);
+        }
+
+        public static void LoopQuiz2()
+        {
+            int i = 1;
+            while (i++ < 10)
+            {
+                Console.WriteLine(string.Format("{0,5}{1}", i, "단"));
+                int k = 0;
+                while (k++ < 10)
+                {
+                    Console.WriteLine(String.Format("{0} x {1} = {2}", i, k, k * i));
+                }
+            }
+        }
+
+        public static void LoopQuiz1()
+        {
+            int num = Convert.ToInt32(ReturnStr("입력 숫자=>"));
+            int i = 1;
+            while (i < 10)
+            {
+                Console.WriteLine(String.Format("{0} x {1} = {2}", num, i, num * i));
+                i++;
+            }
+        }
+
+        public static void ConditionQuiz6()
+        {
+
             int year = Convert.ToInt32(ReturnStr("출생년도 입력 >>> "));
             string[] zodiacSign = { "원숭이", "닭", "개", "돼지", "쥐", "소", "호랑이", "토끼", "용", "뱀", "말", "양" };
             string result = default(string);
 
+            //Console.WriteLine($"{year}년생은 {zodiacSign[year%12]}띠입니다.");
             switch (year % 12)
             {
-                case 0: result = zodiacSign[0];  break;
+                case 0: result = zodiacSign[0]; break;
                 case 1: result = zodiacSign[1]; break;
                 case 2: result = zodiacSign[2]; break;
                 case 3: result = zodiacSign[3]; break;
@@ -60,10 +231,6 @@ namespace day3_1
                 default: break;
             }
             Console.WriteLine($"{year}년생은 {zodiacSign[year % 12]}띠입니다.");
-
-
-
-
         }
 
         public static void ConditionQuiz5()
@@ -83,6 +250,8 @@ namespace day3_1
                 default: grade2 = "F"; break;
             }
             Console.WriteLine("학점은 {0}", grade2);
+
+            
         }
 
         public static void ConditionQuiz4()
