@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 namespace day3_1
 {
 
+    delegate void MulticastDelegate();
+
     internal class Program
     {
         private static string ReturnStr(string keyword)
@@ -31,8 +33,15 @@ namespace day3_1
         }
 
 
+
         static void Main(string[] args)
         {
+            MulticastDelegate multi = null;
+            multi += new MulticastDelegate(LoopQuiz1);
+            multi += new MulticastDelegate(LoopQuiz2);
+            multi += new MulticastDelegate(LoopQuiz3);
+
+            multi();
             //ConditionEx1();
             //ConditionQuiz1();
             //ConditionQuiz2();
