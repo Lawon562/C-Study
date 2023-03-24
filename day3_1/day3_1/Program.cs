@@ -36,12 +36,12 @@ namespace day3_1
 
         static void Main(string[] args)
         {
-            MulticastDelegate multi = null;
-            multi += new MulticastDelegate(LoopQuiz1);
-            multi += new MulticastDelegate(LoopQuiz2);
-            multi += new MulticastDelegate(LoopQuiz3);
+            //MulticastDelegate multi = null;
+            //multi += new MulticastDelegate(LoopQuiz1);
+            //multi += new MulticastDelegate(LoopQuiz2);
+            //multi += new MulticastDelegate(LoopQuiz3);
 
-            multi();
+            //multi();
             //ConditionEx1();
             //ConditionQuiz1();
             //ConditionQuiz2();
@@ -57,7 +57,7 @@ namespace day3_1
             //LoopQuiz6();
             //LoopQuiz7();
             //LoopQuiz8();
-            //LoopQuiz9();
+            LoopQuiz9();
             //LoopQuiz10();
             //LoopQuiz11();
         }
@@ -99,16 +99,48 @@ namespace day3_1
 
         public static void LoopQuiz9()
         {
+            /*
+             *            *             i = 0
+             *          * * *           i = 1
+             *        * * * * *         i = 2
+             *      * * * * * * *       i = 3
+             *    * * * * * * * * *     i = 4
+             *   
+             *   먼저, 앞에 공백을 입력한 후, *을 찍습니다.
+             *   공백을 위한 for문, 별을 찍기위한 for문을 별개로 두어야 합니다.
+             *   
+             *   ________*             i = 0
+             *   ______* * *           i = 1
+             *   ____* * * * *         i = 2
+             *   __* * * * * * *       i = 3
+             *   * * * * * * * * *     i = 4
+             *   
+             */
             for (int i = 0; i < 5; i++)
             {
+                /* 
+                 * 공백 추가 코드 
+                 * int k = 4-i라고 작성하면 i가 증가할 때마다
+                 * k값이 점점 줄어듭니다. 
+                 * 즉, 공백이 점점 줄어드는 것을 구현할 수 있습니다.
+                 */
                 for (int k = 4 - i; k > 0; k--)
                 {
                     Console.Write("  ");
                 }
+
+                /* 
+                 * 별 찍기 코드 
+                 * k가 0부터, i*2한 값까지 반복합니다.
+                 * 처음 반복에는(i가 0일때) i*2를 해도 * 한개만 찍히지만
+                 * 그 다음 반복(i가 1일때)에서는 i(1) * 2 => 2, k는 0부터 시작하므로 i값까지 0, 1, 2 총 3번 반복한다.
+                 * 그 다음에는 i(2) * 2 = 4 -> 0, 1, 2, 3, 4 총 5번 반복한다.
+                 */
                 for (int k = 0; k <= i * 2; k++)
                 {
                     Console.Write("* ");
                 }
+                /* 줄바꿈용 코드 */
                 Console.WriteLine();
             }
         }

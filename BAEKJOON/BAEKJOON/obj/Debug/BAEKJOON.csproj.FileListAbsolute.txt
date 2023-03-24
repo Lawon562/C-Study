@@ -1,0 +1,8 @@
+D:\WorkSpace230320\C-Study\BAEKJOON\BAEKJOON\bin\Debug\BAEKJOON.exe.config
+D:\WorkSpace230320\C-Study\BAEKJOON\BAEKJOON\bin\Debug\BAEKJOON.exe
+D:\WorkSpace230320\C-Study\BAEKJOON\BAEKJOON\bin\Debug\BAEKJOON.pdb
+D:\WorkSpace230320\C-Study\BAEKJOON\BAEKJOON\obj\Debug\BAEKJOON.csproj.AssemblyReference.cache
+D:\WorkSpace230320\C-Study\BAEKJOON\BAEKJOON\obj\Debug\BAEKJOON.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace230320\C-Study\BAEKJOON\BAEKJOON\obj\Debug\BAEKJOON.csproj.CoreCompileInputs.cache
+D:\WorkSpace230320\C-Study\BAEKJOON\BAEKJOON\obj\Debug\BAEKJOON.exe
+D:\WorkSpace230320\C-Study\BAEKJOON\BAEKJOON\obj\Debug\BAEKJOON.pdb
