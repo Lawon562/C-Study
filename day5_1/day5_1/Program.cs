@@ -231,9 +231,9 @@ namespace day5_1
             //Calculaor(15.78, 3.456, 23.456);
 
             //53p
-            Console.WriteLine($"반지름 2.5cm인 타원의 면적 = {GetArea(2.5)}cm");
-            Console.WriteLine($"가로 5.5cm, 세로 7.5cm인 사각형 면적 = {GetArea(5.5, 7.5)}cm");
-            Console.WriteLine($"윗변 2.5cm, 아랫변 4.3cm, 높이 5.2cm인 사다리꼴의 면적 = {GetArea(2.5, 4.3, 5.2)}cm");
+            //Console.WriteLine($"반지름 2.5cm인 타원의 면적 = {GetArea(2.5)}cm");
+            //Console.WriteLine($"가로 5.5cm, 세로 7.5cm인 사각형 면적 = {GetArea(5.5, 7.5)}cm");
+            //Console.WriteLine($"윗변 2.5cm, 아랫변 4.3cm, 높이 5.2cm인 사다리꼴의 면적 = {GetArea(2.5, 4.3, 5.2)}cm");
 
         }
 

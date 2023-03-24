@@ -1,0 +1,8 @@
+D:\WorkSpace230320\C-Study\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe.config
+D:\WorkSpace230320\C-Study\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe
+D:\WorkSpace230320\C-Study\SnakeGame\SnakeGame\bin\Debug\SnakeGame.pdb
+D:\WorkSpace230320\C-Study\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.AssemblyReference.cache
+D:\WorkSpace230320\C-Study\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace230320\C-Study\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.CoreCompileInputs.cache
+D:\WorkSpace230320\C-Study\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
+D:\WorkSpace230320\C-Study\SnakeGame\SnakeGame\obj\Debug\SnakeGame.pdb
