@@ -1,0 +1,8 @@
+D:\WorkSpace230320\C-Study\day5_1\day5_1\obj\Debug\day5_1.csproj.AssemblyReference.cache
+D:\WorkSpace230320\C-Study\day5_1\day5_1\obj\Debug\day5_1.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace230320\C-Study\day5_1\day5_1\obj\Debug\day5_1.csproj.CoreCompileInputs.cache
+D:\WorkSpace230320\C-Study\day5_1\day5_1\bin\Debug\day5_1.exe.config
+D:\WorkSpace230320\C-Study\day5_1\day5_1\bin\Debug\day5_1.exe
+D:\WorkSpace230320\C-Study\day5_1\day5_1\bin\Debug\day5_1.pdb
+D:\WorkSpace230320\C-Study\day5_1\day5_1\obj\Debug\day5_1.exe
+D:\WorkSpace230320\C-Study\day5_1\day5_1\obj\Debug\day5_1.pdb
