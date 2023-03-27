@@ -23,15 +23,18 @@ namespace SnakeGame
 
         public static void DrawText(int x, int y, string[] text)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             for (int i = 0; i < text.Length; i++)
             {
                 Console.SetCursorPosition(x, y++);
                 Console.Write(text[i]);
             }
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public static void DrawText(int x, int y, string text)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             int j = 0;
             Console.SetCursorPosition(x, y++);
             foreach (char ch in text)
@@ -43,6 +46,7 @@ namespace SnakeGame
                 }
                 Console.Write(ch);
             }
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public static void DrawUI()

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Media;
 using static SnakeGame.Structure;
 
 /*
@@ -12,8 +13,24 @@ using static SnakeGame.Structure;
  */
 namespace SnakeGame
 {
+
     internal class Program
     {
+
+        public static void PressEnterKey(ref bool game)
+        {
+            ConsoleKeyInfo inputKey = default(ConsoleKeyInfo);
+            while (true)
+            {
+                inputKey = Console.ReadKey();
+                if (inputKey.Key == ConsoleKey.Enter)
+                {
+                    game = true;
+                    break;
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             /* 화면 설정  */ ScreenSettings.execute();    /* UI 설정 */ UIFunc.DrawUI();
@@ -34,26 +51,23 @@ namespace SnakeGame
 
             /* 게임을 관리해줄 변수 game는 false면 게임이 진행되지 않는다 */
             bool game = false;
-            ConsoleKeyInfo inputKey = default(ConsoleKeyInfo);
-            while (true)
-            {
-                inputKey = Console.ReadKey();
-                if (inputKey.Key == ConsoleKey.Enter)
-                {
-                    game = true;
-                    break;
-                }
-            }
+            PressEnterKey(ref game);
+            
             
             while (game)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
+                
                 UIFunc.DrawText(Key.SCORE_TEXT_X, Key.SCORE_TEXT_Y, Key.SCORE_TEXT);
-                Console.ForegroundColor = ConsoleColor.White;
+                
 
                 // item과 player가 충돌했는지 점검하고, 점수를 반환한다.
                 if (Func.CollideItem(Player, itemPoint))
                 {
+                    //string filepath = "./Rinne - Inception.wav";
+                    //SoundPlayer musicPlayer = new SoundPlayer();
+                    //musicPlayer.SoundLocation = filepath;
+                    //musicPlayer.Play();
+                    
                     score += Func.GetScore(Player, itemPoint);      // 점수 증가
                     Func.SetItemPosition(ref itemPoint);            // item 위치 재설정
                 }

@@ -18,6 +18,8 @@ namespace SnakeGame
             /* 윈도우를 정해진 크기로 설정하기*/
             Console.SetWindowSize(Key.WINDOW_X, Key.WINDOW_Y);
             Console.CursorVisible = false;
+            Console.Title = "Snake Game";
+
         }
     }
 }
