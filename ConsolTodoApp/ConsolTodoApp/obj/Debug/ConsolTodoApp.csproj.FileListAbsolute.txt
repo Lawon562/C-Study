@@ -1,0 +1,8 @@
+D:\WorkSpace230320\C-Study\ConsolTodoApp\ConsolTodoApp\bin\Debug\ConsolTodoApp.exe.config
+D:\WorkSpace230320\C-Study\ConsolTodoApp\ConsolTodoApp\bin\Debug\ConsolTodoApp.exe
+D:\WorkSpace230320\C-Study\ConsolTodoApp\ConsolTodoApp\bin\Debug\ConsolTodoApp.pdb
+D:\WorkSpace230320\C-Study\ConsolTodoApp\ConsolTodoApp\obj\Debug\ConsolTodoApp.csproj.AssemblyReference.cache
+D:\WorkSpace230320\C-Study\ConsolTodoApp\ConsolTodoApp\obj\Debug\ConsolTodoApp.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace230320\C-Study\ConsolTodoApp\ConsolTodoApp\obj\Debug\ConsolTodoApp.csproj.CoreCompileInputs.cache
+D:\WorkSpace230320\C-Study\ConsolTodoApp\ConsolTodoApp\obj\Debug\ConsolTodoApp.exe
+D:\WorkSpace230320\C-Study\ConsolTodoApp\ConsolTodoApp\obj\Debug\ConsolTodoApp.pdb

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A604E52B-94C8-45E7-814C-2454D85979D5}</ProjectGuid>
+    <ProjectGuid>{B3368635-E976-43EC-9B4C-DB86F0DFA739}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>day7_1</RootNamespace>
-    <AssemblyName>day7_1</AssemblyName>
+    <RootNamespace>ConsolTodoApp</RootNamespace>
+    <AssemblyName>ConsolTodoApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookManager.cs" />
-    <Compile Include="Dinosaur.cs" />
-    <Compile Include="Ellipse.cs" />
-    <Compile Include="Figure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Zodiac.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
