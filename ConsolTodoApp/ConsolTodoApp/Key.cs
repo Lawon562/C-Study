@@ -45,7 +45,7 @@ namespace ConsoleTodoApp
         public static int todoListTextStartX => TitleLength + 6 + (WindowX / 2 + 2) / 2 - (StringTemplate.CreateButtonText.Length) + 2;
         public static int todoListTextStartY = 2;
 
-        public static int instructionLineNumber = 28;
+        public static int instructionLineNumber = 38;
 
         public static int TodoCount = 0;
 

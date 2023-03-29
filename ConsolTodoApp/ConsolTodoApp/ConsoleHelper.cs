@@ -27,7 +27,7 @@ namespace ConsolTodoApp
         {
             //Console.SetCursorPosition(Key.TitlePositionStartX + 14, 12);
             Console.ForegroundColor = ConsoleColor.Black;
-            for (int y = 11; y < 28; y++)
+            for (int y = 11; y < 31; y++)
             {
                 Console.SetCursorPosition(0, y);
                 Console.Write(StringTemplate.InputSpace);
