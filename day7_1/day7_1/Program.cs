@@ -40,15 +40,15 @@ namespace day7_1
             //Console.WriteLine($"\t{2009}년 생은 {Zodiac.GetZodiac(1997)} 띠");
 
             Tyranno tyranno = new Tyranno();
-            tyranno.Sleep();
-            tyranno.Hunt();
-            tyranno.Eat();
+            tyranno.Sleep("동굴");
+            tyranno.Hunt("물고기");
+            tyranno.Eat("물고기");
 
             Console.WriteLine();
 
             Dooly dooly = new Dooly();
-            dooly.Sleep();
-            dooly.Eat();
+            dooly.Sleep("공원");
+            dooly.Eat("치킨");
             dooly.Dance();
             dooly.Sing();
         }
