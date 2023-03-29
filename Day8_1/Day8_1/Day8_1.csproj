@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3368635-E976-43EC-9B4C-DB86F0DFA739}</ProjectGuid>
+    <ProjectGuid>{0E05E343-ACA8-4FF2-900D-54BD3C514E3F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsolTodoApp</RootNamespace>
-    <AssemblyName>ConsolTodoApp</AssemblyName>
+    <RootNamespace>Day8_1</RootNamespace>
+    <AssemblyName>Day8_1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,19 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorFunc.cs" />
-    <Compile Include="Drawer.cs" />
-    <Compile Include="ConsoleHelper.cs" />
-    <Compile Include="Key.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="VERSION.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

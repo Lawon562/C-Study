@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsolTodoApp
+namespace Day8_1
 {
-    internal class DrawFunc
+    internal class Program
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }

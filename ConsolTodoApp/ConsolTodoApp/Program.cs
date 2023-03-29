@@ -1,155 +1,13 @@
 ﻿using ConsoleTodoApp;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Xml.Schema;
 
 namespace ConsolTodoApp
 {
     internal class Program
     {
-        
-        public static void WriteProgramInfo(int x, int y, string str)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(str);
-        }
-
-        public static void DrawTitle()
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            int y = 0;
-            foreach (string line in StringTemplate.Title)
-            {
-                Console.SetCursorPosition(Key.TitlePositionStartX, y++);
-                Console.WriteLine(line);
-            }
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-
-            int authorX = Key.ProgramDescriptionStartX - StringTemplate.Author.Length - 2;
-            int dateX = Key.ProgramDescriptionStartX - StringTemplate.Date.Length;
-            WriteProgramInfo(authorX, y++, StringTemplate.Author);
-            WriteProgramInfo(dateX, y++, StringTemplate.Date);
-            
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
-        public static void DrawBox(int startX, int startY, int width, int height, bool color=false)
-        {
-            if (color) { Console.ForegroundColor = ConsoleColor.Red; }
-            else { Console.ForegroundColor = ConsoleColor.DarkGray; }
-            Console.SetCursorPosition(startX, startY++);
-            Console.Write("┏");
-            
-            for (int k = 0; k < width; k++)
-            {
-                Console.Write("━");
-            }
-            Console.Write("┓");
-
-            
-            for(int i=0; i< height; i++)
-            {
-                Console.SetCursorPosition(startX, startY++);
-                Console.Write("┃");
-                for (int k = 0; k < width; k++)
-                {
-                    Console.Write(" ");
-                }
-                Console.Write("┃");
-            }
-            
-            Console.SetCursorPosition(startX, startY++);
-            Console.Write("┗");
-            for (int k = 0; k < width; k++)
-            {
-                Console.Write("━");
-            }
-            Console.Write("┛");
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
-
-        public static void DrawInputBox()
-        {
-            DrawBox(Key.InputBoxBorderX, Key.InputBoxBordereY, Key.InputBoxWidth, Key.InputBoxHeight);
-        }
-        
-        public static void DrawInputCard(bool color)
-        {
-            DrawBox(Key.CardStartX, Key.InputCardBorderStartX, Key.todoListWidth, Key.todoListHeight, color);
-            Console.SetCursorPosition(Key.todoListTextStartX, Key.todoListTextStartY);
-            Console.Write(StringTemplate.CreateButtonText);
-        }
-
-        public static void EraseInstructionLine()
-        {
-            Console.SetCursorPosition(0, Key.instructionLineNumber);
-            Console.Write(StringTemplate.InstructionSpace);
-            Console.SetCursorPosition(0, Key.instructionLineNumber);
-        }
-
-        public static void EraseInputLine()
-        {
-            //Console.SetCursorPosition(Key.TitlePositionStartX + 14, 12);
-            Console.ForegroundColor= ConsoleColor.Black;
-            for (int y = 11; y < 14; y++)
-            {
-                Console.SetCursorPosition(0, y);
-                Console.Write(StringTemplate.InputSpace);
-            }
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-
-        }
-
-        public static void InstructionWrite(string args)
-        {
-            EraseInstructionLine();
-            Console.Write(args);
-        }
-
-        public static void DrawTodoCard(int count, int choiceIdx)
-        {
-            int x = Key.CardStartX;
-            int y = Key.CardStartY + 7 * count;
-            int width = Key.CardWidth;
-            int height = Key.CardHeight;
-            bool check = count % todoList.Count == choiceIdx ? true : false;
-
-            DrawBox(x, y, width, height, check);
-         
-            // 몇 번째 카드인지 출력
-            Console.SetCursorPosition(x - 1, y + 1);
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($" # {count +1} ");
-            
-            // 카드에 to-do 출력
-            Console.SetCursorPosition(x + 2, y + 3);
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Write(" To-do : ");
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write($" {todoList[count].Context} ");
-            Console.SetCursorPosition(x + 2, y + Key.CardHeight);
-            
-            // 카드에 태그 출력
-            string[] tags = todoList[count].Tag.Split();
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.BackgroundColor = ConsoleColor.Black;
-            if (todoList[count].Tag.Length > 0)
-                foreach ( string tag in tags ) Console.Write($"#{tag} ");
-            Console.ForegroundColor = ConsoleColor.White;
-
-            Key.InputCardBorderStartX = 1 + 7 * todoList.Count;
-            Key.todoListTextStartY = 2+7*todoList.Count;
-        }
-
-        
-        //public static void SetPoint()
-        //{
-        //    Console.SetCursorPosition(Key.CurrentScreenX, Key.CurrentScreenY);
-        //}
-
         public struct Todo
         {
             public string Context;
@@ -164,38 +22,100 @@ namespace ConsolTodoApp
             }
         }
 
-        public static List<Todo> todoList = new List<Todo>();
+        static bool ContainsKorean(char ch)
+        {
+            
+            if (ch >= 0xAC00 && ch <= 0xD7A3)
+            {
+                return true;
+            }
+            return false;
+        }
 
-
-
+        public static List<Todo> TodoList = new List<Todo>();
 
         static void Main(string[] args)
         {
+            TodoList.Add(new Todo("장 보러 가기", "my name is", "장 보러 가기장 보러 가기장 보러 가기장 보러 가기장 보러 가기"));
+            TodoList.Add(new Todo("Bye", "my name is", "asdfkjawdsfselfj a welfjewkflwjfl"));
+            TodoList.Add(new Todo("reHi", "my name is", "asdfkjawelfhh jawelfjewkfasdfasfasdfasd asdfasd ads asdf asda sd asdfasdfasdfasdsd sad asdadsf asd asdf asdf asdf asdsdfsaffafadsafslwjfl"));
+
             Console.SetWindowSize(Key.WindowX, Key.WindowY);
             Console.CursorVisible = false;
 
-            DrawTitle();
+            Drawer.DrawTitle();
             
             ConsoleKey key = default(ConsoleKey);
             int choiceIdx = 0;
-            DrawInputCard(true);
-            
+            Drawer.DrawInputCard(true);
+            //int ib = 0;
             do
             {
                 while (Console.KeyAvailable) Console.ReadKey(false);
-                EraseInstructionLine();
-                EraseInputLine();
+                ConsoleHelper.EraseInstructionLine();
+                ConsoleHelper.EraseInputLine();
 
-
-                if (todoList.Count <= 0 || (choiceIdx == todoList.Count && key.Equals(ConsoleKey.Enter)))
+                if (TodoList.Count > 0 && choiceIdx < TodoList.Count && key.Equals(ConsoleKey.Enter))
                 {
-                    if (todoList.Count >= 5)
+                    Drawer.DrawBox(Key.InputBoxBorderX, Key.InputBoxBordereY, Key.InputBoxWidth, Key.InputBoxHeight+15, true);
+                    string context = $" #### {TodoList[choiceIdx].Context} #### ";
+                    int x = Key.InputBoxBorderX + 3;
+                    Console.SetCursorPosition(x, Key.InputBoxBordereY + 2);
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(context);
+
+
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.SetCursorPosition(x, Key.InputBoxBordereY + 4);
+                    Console.Write("Description");
+
+                    Console.SetCursorPosition(x, Key.InputBoxBordereY + 6);
+                    int y = Key.InputBoxBordereY + 6;
+                    int length = TodoList[choiceIdx].Description.Length;
+
+                    int checker = 0;
+                    for (int i = 0; i < length; i++)
                     {
-                            InstructionWrite(StringTemplate.CreateLimitText);
+                        char ch = TodoList[choiceIdx].Description[i];
+                        if (ContainsKorean(ch)/* && i % 25 == 0*/)
+                        {
+                            checker+=6;
+                        }
+                        else
+                        {
+                            checker += 1;
+                        }
+                        if (checker % 45 == 0)
+                        {
+                            checker = 1;
+                            Console.SetCursorPosition(x, ++y);
+                        }
+                        Console.Write(ch);
+                    }
+
+                    y = Key.InputBoxBordereY + Key.InputBoxHeight + 15;
+                    Console.SetCursorPosition(x, y);
+                    string[] s = TodoList[choiceIdx].Tag.Split();
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        Console.Write($"#{s[i]} ");
+                    }
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                }
+                if (TodoList.Count <= 0 || (choiceIdx == TodoList.Count && key.Equals(ConsoleKey.Enter)))
+                {
+                    if (TodoList.Count >= 5)
+                    {
+                        ConsoleHelper.InstructionWrite(StringTemplate.CreateLimitText);
                     }
                     else 
                     {
-                        DrawInputBox();
+                        Drawer.DrawInputBox();
                         Console.CursorVisible = true;
                         Console.ForegroundColor = ConsoleColor.Green;
                     
@@ -211,37 +131,36 @@ namespace ConsolTodoApp
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.BackgroundColor = ConsoleColor.Black;
 
-                        EraseInstructionLine();
+                        ConsoleHelper.EraseInstructionLine();
                         Console.Write(StringTemplate.InputDescriptionText);
                         string description = Console.ReadLine();
 
-                        EraseInstructionLine();
+                        ConsoleHelper.EraseInstructionLine();
                         Console.Write(StringTemplate.InputTagText);
                         string tag = Console.ReadLine();
 
-                        InstructionWrite(StringTemplate.AskSaveText);
+                        ConsoleHelper.InstructionWrite(StringTemplate.AskSaveText);
                         string answer = Console.ReadLine();
 
                         if(Array.IndexOf(StringTemplate.Yes, answer) != -1)
                         {
-                            todoList.Add(new Todo(element, tag, description));
-                            InstructionWrite(StringTemplate.SaveText);
+                            TodoList.Add(new Todo(element, tag, description));
+                            ConsoleHelper.InstructionWrite(StringTemplate.SaveText);
                         }
                         else
                         {
                             key = default(ConsoleKey);
-                            InstructionWrite(StringTemplate.DontSaveText);
+                            ConsoleHelper.InstructionWrite(StringTemplate.DontSaveText);
                         }
 
                         Console.Write(StringTemplate.PressEnterText);
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.CursorVisible = false;
                     
-                        choiceIdx = todoList.Count-1;
-                        EraseInputLine();
+                        choiceIdx = TodoList.Count-1;
+                        ConsoleHelper.EraseInputLine();
                     }
                 }
-                
                 else
                 {
                     if (key == ConsoleKey.UpArrow || key == ConsoleKey.LeftArrow)
@@ -250,12 +169,12 @@ namespace ConsolTodoApp
                     }
                     else if (key == ConsoleKey.DownArrow || key == ConsoleKey.RightArrow)
                     {
-                        if (++choiceIdx > todoList.Count) choiceIdx = todoList.Count;
+                        if (++choiceIdx > TodoList.Count) choiceIdx = TodoList.Count;
                     }
-                    for (int i = choiceIdx > 1 ? choiceIdx-1 : 0; i <= todoList.Count - 1; i++)
-                        DrawTodoCard(i, choiceIdx);      
+                    for (int i = choiceIdx > 1 ? choiceIdx-1 : 0; i <= TodoList.Count - 1; i++)
+                        Drawer.DrawTodoCard(i, choiceIdx);
 
-                    DrawInputCard(todoList.Count == choiceIdx);
+                    Drawer.DrawInputCard(TodoList.Count == choiceIdx);
                 }
             } while ((key = Console.ReadKey().Key) != ConsoleKey.Q);
             

@@ -27,7 +27,7 @@ namespace ConsoleTodoApp
         public static string InstructionSpace = "                                                                                              ";
         public static string InputSpace = "                                                  ";
 
-        public static string CreateButtonText = "일정을 생성하시려면 여기를 눌러 주세요.";
+        public const string CreateButtonText = "일정을 생성하시려면 여기를 눌러 주세요.";
 
         public static string CreateLimitText = "집중력 유지 및 성취감 등을 이유로 To-do는 최대 5개까지 생성할 수 있습니다.";
 
