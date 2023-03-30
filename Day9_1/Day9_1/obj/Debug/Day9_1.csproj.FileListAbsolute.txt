@@ -1,0 +1,8 @@
+D:\WorkSpace230320\C-Study\Day9_1\Day9_1\bin\Debug\Day9_1.exe.config
+D:\WorkSpace230320\C-Study\Day9_1\Day9_1\bin\Debug\Day9_1.exe
+D:\WorkSpace230320\C-Study\Day9_1\Day9_1\bin\Debug\Day9_1.pdb
+D:\WorkSpace230320\C-Study\Day9_1\Day9_1\obj\Debug\Day9_1.csproj.AssemblyReference.cache
+D:\WorkSpace230320\C-Study\Day9_1\Day9_1\obj\Debug\Day9_1.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace230320\C-Study\Day9_1\Day9_1\obj\Debug\Day9_1.csproj.CoreCompileInputs.cache
+D:\WorkSpace230320\C-Study\Day9_1\Day9_1\obj\Debug\Day9_1.exe
+D:\WorkSpace230320\C-Study\Day9_1\Day9_1\obj\Debug\Day9_1.pdb
