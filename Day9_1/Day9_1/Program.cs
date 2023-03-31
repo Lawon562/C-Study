@@ -150,22 +150,38 @@ namespace Day9_1
             //    Console.WriteLine(hashtable[key]);
             //}
 
-            string[] routes = { "E 2", "S 2", "W 1" };
-            for (int i = 0; i < routes.Length; i++)
-            {
-                int direction = -1;
-                string[] route = routes[i].Split();
-                switch (route[0])
-                {
-                    case "N": direction = 0; break;
-                    case "E": direction = 1; break;
-                    case "S": direction = 2; break;
-                    case "W": direction = 3; break;
-                }
-                int distance = int.Parse(route[1]);
+            //string[] routes = { "E 2", "S 2", "W 1" };
+            //for (int i = 0; i < routes.Length; i++)
+            //{
+            //    int direction = -1;
+            //    string[] route = routes[i].Split();
+            //    switch (route[0])
+            //    {
+            //        case "N": direction = 0; break;
+            //        case "E": direction = 1; break;
+            //        case "S": direction = 2; break;
+            //        case "W": direction = 3; break;
+            //    }
+            //    int distance = int.Parse(route[1]);
 
 
-            }
+            //}
+
+            //int[] numArr = Enumerable.Range(1, 5).Select(i => i * 10).ToArray();
+            ////int[] numArr = { 10, 20, 30, 40, 50 };
+            //string[] stringArr = { "커피", "라떼", "우유", "프로그래밍", "코드" };
+
+            //Hashtable mHashTable = new Hashtable();
+            //for(int i = 0; i < numArr.Length; i++)
+            //{
+            //    mHashTable[stringArr[i]] = numArr[i];
+            //}
+
+            //foreach(var key in mHashTable.Keys)
+            //{
+            //    Console.WriteLine($"{key}, {mHashTable[key]}");
+            //}
+            int[] arr = { };
         }
 
     }
