@@ -1,0 +1,8 @@
+D:\WorkSpace230320\C-Study\BackJoon\BackJoon\obj\Debug\BackJoon.csproj.AssemblyReference.cache
+D:\WorkSpace230320\C-Study\BackJoon\BackJoon\obj\Debug\BackJoon.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace230320\C-Study\BackJoon\BackJoon\obj\Debug\BackJoon.csproj.CoreCompileInputs.cache
+D:\WorkSpace230320\C-Study\BackJoon\BackJoon\bin\Debug\BackJoon.exe.config
+D:\WorkSpace230320\C-Study\BackJoon\BackJoon\bin\Debug\BackJoon.exe
+D:\WorkSpace230320\C-Study\BackJoon\BackJoon\bin\Debug\BackJoon.pdb
+D:\WorkSpace230320\C-Study\BackJoon\BackJoon\obj\Debug\BackJoon.exe
+D:\WorkSpace230320\C-Study\BackJoon\BackJoon\obj\Debug\BackJoon.pdb
